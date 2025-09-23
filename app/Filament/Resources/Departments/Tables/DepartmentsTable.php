@@ -18,9 +18,13 @@ class DepartmentsTable
             ->columns([
                 TextColumn::make('name')->label('Name')->searchable()->sortable(),
                 TextColumn::make('slug')->label('Slug')->searchable(),
-                IconColumn::make('is_active')
+                IconColumn::make('active')
                     ->label('Active')
-                    ->boolean(),
+                    ->boolean()
+                    ->trueIcon('heroicon-o-check-circle')
+                    ->falseIcon('heroicon-o-x-circle')
+                    ->trueColor('success')
+                    ->falseColor('danger')
             ])
             ->defaultSort('name', 'asc')
             ->filters([
