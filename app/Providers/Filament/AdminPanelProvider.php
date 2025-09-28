@@ -38,6 +38,7 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Dashboard::class,
             ])
+            ->sidebarWidth('12rem')
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
                 AccountWidget::class,
@@ -54,7 +55,7 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
                 'auth',
-                sprintf('role:%s|%s', 
+                sprintf('role:%s|%s',
                 RoleEnum::ADMIN->value,
                 RoleEnum::VENDOR->value
                 )
