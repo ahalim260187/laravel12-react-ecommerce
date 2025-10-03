@@ -22,7 +22,8 @@ class DepartmentForm
             TextInput::make('slug')
                 ->label('Slug')
                 ->required()
-                ->readonly(),
+                ->readonly()
+                ->unique(table: 'departments', column: 'slug'),
             Checkbox::make('active')
                 ->label('Active'),
         ]);
